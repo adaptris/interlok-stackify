@@ -1,8 +1,7 @@
 <body>
-	<p>New Relic specific implementation for adp-profiler package.</p>
-	<p>This package does not replace the New Relic agent and can be
-		used in conjunction with it to provide additional custom metrics. It
-		depends on the adp-profiler package and on using aspectj as an
+	<p>Stackify specific implementation for adp-profiler package.</p>
+	<p>This package allows custom metrics generated live from Interlok to be sent to your Stackify dashboard. The metrics sent
+		depend on the adp-profiler package and on using aspectj as an
 		additional {@code javaagent} when starting the JVM. The recommendation
 		is to not use the bundled wrapper executables, and to roll your own
 		script that provides the correct startup parameters to your JVM.</p>
@@ -12,16 +11,16 @@
 		com.adaptris.profiler.plugin.factory} implementation
 	<ul>
 		<li>com.adaptris.profiler.plugin.factory={@link
-			com.adaptris.newrelic.NewRelicInterlokPluginFactory com.adaptris.newrelic.NewRelicInterlokPluginFactory} which will
+			com.adaptris.stackify.StackifyPluginFactory com.adaptris.stackify.StackifyPluginFactory} which will
 			generate custom metrics for all producers, services, and workflows</li>
 		<li>com.adaptris.profiler.plugin.factory={@link
-			com.adaptris.newrelic.WorkflowProfiler com.adaptris.newrelic.WorkflowProfiler} which will generate custom
+			com.adaptris.stackify.WorkflowProfiler com.adaptris.stackify.WorkflowProfiler} which will generate custom
 			metrics only for workflows</li>
 		<li>com.adaptris.profiler.plugin.factory={@link
-			com.adaptris.newrelic.ServiceProfiler com.adaptris.newrelic.ServiceProfiler} which will generate custom
+			com.adaptris.stackify.ServiceProfiler com.adaptris.stackify.ServiceProfiler} which will generate custom
 			metrics for all services</li>
 		<li>com.adaptris.profiler.plugin.factory={@link
-			com.adaptris.newrelic.ProducerProfiler com.adaptris.newrelic.ProducerProfiler} which will generate custom
+			com.adaptris.stackify.ProducerProfiler com.adaptris.stackify.ProducerProfiler} which will generate custom
 			metrics for all producers</li>
 	</ul>
 	</p>
@@ -43,7 +42,7 @@ LOCALCLASSPATH=$CLASSPATH
 export JAVA_HOME=/opt/java/jdk1.7
 JAVA_ARGS="-server -XX:+UseConcMarkSweepGC -XX:+UseParNewGC"
 
-$JAVA_HOME/bin/java -javaagent:/home/hubdemo/demo/hub-adapter/lib/aspectjweaver.jar -javaagent:/home/hubdemo/demo/newrelic/newrelic.jar \
+$JAVA_HOME/bin/java -javaagent:/home/hubdemo/demo/hub-adapter/lib/aspectjweaver.jar \
   -Dorg.aspectj.weaver.loadtime.configuration=META-INF/profiler-aop.xml -cp "$LOCALCLASSPATH" $JAVA_ARGS \
   com.adaptris.core.management.SimpleBootstrap bootstap.properties  
   </pre>
