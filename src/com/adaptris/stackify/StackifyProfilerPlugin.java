@@ -14,4 +14,10 @@ public abstract class StackifyProfilerPlugin implements ClientPlugin {
     MetricManager.shutdown(); // force a flush of any queued metrics.
   }
 
+  @Override
+  public void init() {}
+
+  @Override
+  public void close() {}
+
 }
