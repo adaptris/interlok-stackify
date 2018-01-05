@@ -22,7 +22,7 @@
   <publications>
      <artifact name="adp-stackify" type="jar" ext="jar"/>
      <artifact name="adp-stackify" type="pom" ext="pom"/>
-     <artifact name="adp-stackify-javadoc" type="javadoc" ext="zip" conf="javadoc"/>
+
      <artifact type="javadoc" ext="jar" conf="javadoc" m:classifier="javadoc"/>
   </publications>
   <dependencies>
