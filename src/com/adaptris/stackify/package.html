@@ -1,13 +1,13 @@
 <body>
-	<p>Stackify specific implementation for adp-profiler package.</p>
+	<p>Stackify specific implementation for interlok-profiler package.</p>
 	<p>This package allows custom metrics generated live from Interlok to be sent to your Stackify dashboard. The metrics sent
-		depend on the adp-profiler package and on using aspectj as an
+		depend on the interlok-profiler package and on using aspectj as an
 		additional {@code javaagent} when starting the JVM. The recommendation
 		is to not use the bundled wrapper executables, and to roll your own
 		script that provides the correct startup parameters to your JVM.</p>
 
 	<p>There are 4 plugin factories that can be configured in your
-		adp-profiler.properties as the {@code
+		interlok-profiler.properties as the {@code
 		com.adaptris.profiler.plugin.factory} implementation
 	<ul>
 		<li>com.adaptris.profiler.plugin.factory={@link
