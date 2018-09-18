@@ -3,8 +3,6 @@ package com.adaptris.stackify.stats;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.adaptris.core.CoreConstants;
-import com.adaptris.core.SerializableAdaptrisMessage;
 import com.adaptris.profiler.ProcessStep;
 import com.adaptris.profiler.client.EventReceiver;
 import com.stackify.metric.Counter;
@@ -34,10 +32,10 @@ public abstract class StatsCompiler implements EventReceiver {
       Timer timer = MetricFactory.getTimer(metricPrefix(), id + " time");
       timer.durationMs(processStep.getTimeTakenMs());
       
-      SerializableAdaptrisMessage message = processStep.getMessage();
-      String exception = message.getMetadataValue(CoreConstants.OBJ_METADATA_EXCEPTION);
-      if(exception != null)
-        com.stackify.api.common.log.direct.Logger.queueException(new Exception(exception));
+//      SerializableAdaptrisMessage message = processStep.getMessage();
+//      String exception = message.getMetadataValue(CoreConstants.OBJ_METADATA_EXCEPTION);
+//      if(exception != null)
+//        com.stackify.api.common.log.direct.Logger.queueException(new Exception(exception));
     }
   }
 
