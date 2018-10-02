@@ -226,11 +226,12 @@ publishing {
         asNode().appendNode("description", "Profile Interlok and inject statistics into Stackify.")
         asNode().appendNode("url", "https://development.adaptris.net/docs/Interlok/advanced-stackify-profiling.html")
         def properties = asNode().appendNode("properties")
-        properties.appendNode("target", "3.0.0+")
+        properties.appendNode("target", "3.8.0 only")
         properties.appendNode("tags", "stackify,profiling")
         properties.appendNode("license", "false")
         properties.appendNode("notes", "Requires interlok-profiler")
         properties.appendNode("externalUrl", "http://stackify.com")
+        properties.appendNode("deprecated", "Removed in 3.8.1 due to profiler incompabitility")
       }
     }
   }
