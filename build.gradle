@@ -82,14 +82,13 @@ dependencies {
   compile ("com.fasterxml.jackson.core:jackson-core:2.9.7")
 
   annotationProcessor ("com.adaptris:interlok-common:$interlokCoreVersion") {changing= true}
-  umlDoclet("nl.talsmasoftware:umldoclet:1.0.18")
+  umlDoclet("nl.talsmasoftware:umldoclet:1.1.1")
 
   testCompile ('junit:junit:4.12')
   testCompile ('org.mockito:mockito-all:1.10.19')
   testCompile ("com.adaptris:interlok-stubs:$interlokCoreVersion") { changing= true }
   testCompile ("org.apache.logging.log4j:log4j-core:2.8.1")
   testCompile ("org.apache.logging.log4j:log4j-1.2-api:2.8.1")
-  testCompile ("org.apache.logging.log4j:log4j-slf4j-impl:2.8.1")
   testCompile ("org.apache.logging.log4j:log4j-api:2.8.1")
 
   javadoc("com.adaptris:interlok-core-apt:$interlokCoreVersion") { changing= true}
@@ -227,11 +226,12 @@ publishing {
         asNode().appendNode("description", "Profile Interlok and inject statistics into Stackify.")
         asNode().appendNode("url", "https://development.adaptris.net/docs/Interlok/advanced-stackify-profiling.html")
         def properties = asNode().appendNode("properties")
-        properties.appendNode("target", "3.0.0+")
+        properties.appendNode("target", "3.8.0 only")
         properties.appendNode("tags", "stackify,profiling")
         properties.appendNode("license", "false")
         properties.appendNode("notes", "Requires interlok-profiler")
         properties.appendNode("externalUrl", "http://stackify.com")
+        properties.appendNode("deprecated", "Removed in 3.8.1 due to profiler incompabitility")
       }
     }
   }
