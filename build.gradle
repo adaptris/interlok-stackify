@@ -74,7 +74,7 @@ dependencies {
   compile ("com.adaptris:interlok-core-apt:$interlokCoreVersion") { changing= true}
   compile ("org.slf4j:slf4j-api:$slf4jVersion")
   compile ("com.adaptris:interlok-profiler:$interlokCoreVersion") { changing= true}
-  compile ("com.stackify:stackify-metrics:1.1.7") {
+  compile ("com.stackify:stackify-metrics:2.1.0") {
     exclude group: "com.fasterxml.jackson.core", module: "jackson-databind"
     exclude group: "com.fasterxml.jackson.core", module: "jackson-core"
   }
